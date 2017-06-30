@@ -1,4 +1,4 @@
-
+from os.path import dirname
 
 class Path:
     def __init__(self, current):
@@ -21,7 +21,7 @@ class BigDataModel:
     def params(self):
         return self._params
 
-    @property.setter
+    @params.setter
     def params(self, new_params):
         assert all(map(lambda p: p > 0, new_params))
         self._params = new_params
