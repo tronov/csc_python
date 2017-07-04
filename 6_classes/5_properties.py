@@ -1,5 +1,6 @@
 from os.path import dirname
 
+
 class Path:
     def __init__(self, current):
         self.current = current
