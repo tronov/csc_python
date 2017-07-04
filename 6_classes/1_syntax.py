@@ -1,28 +1,29 @@
 class Counter:
     """I count. That is all"""
 
-    all_counters = []               # class attribute
+    all_counters = []               # class attribute (common for each instance)
 
-    def __init__(self, initial=0):  # конструктор
-        self.value = initial        # запись атрибута экземпляра
-        Counter.all_counters.append(self)   # обновление атрибута класса
-        # конструктор должен ничего не возвращать
+    def __init__(self, initial=0):  # an instance initializer method
+        self.value = initial        # set the instance attribute
+        Counter.all_counters.append(self)   # update the class attribute
+        # this method must to return None
 
     def increment(self):
         self.value += 1
 
     def get(self):
-        return self.value           # чтение атрибута
+        return self.value           # get attribute
 
-# Другой способ объявления атрибута класса. Никогда так не делайте
+
+# The other way to define class attribute. Do not ever do that.
 Counter.other_attribute = 42
 
 
 class Noop:
     some_attribute = 42
     _internal_attribute = []
-    __very_internal_attribute = []  # чтение извне вызовет исключение
-    # можно прочесть из Noop._Noop__very_internal_attribute
+    __very_internal_attribute = []  # getting that attribute outside the class will throw an Exception
+    # you can get in from Noop._Noop__very_internal_attribute
 
 
 class MemorizingDict(dict):

@@ -7,5 +7,5 @@ print(noop.some_attribute)
 
 noop.other_attribute = 100500
 
-# экземпляры класса с указанным __slots__ требуют меньше памяти,
-# потому что у них отсутствует __dict__
+# instances of classes which have __slots__ dict attribute
+# require less memory because they haven't __dict__
