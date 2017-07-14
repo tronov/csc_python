@@ -1,4 +1,4 @@
-file = open("./7_open.py")
+file = open("./07_open.py")
 # modes: (r)ead only - default,
 #        (w)rite only with erasing,
 #        (r+) - read and write,
@@ -9,7 +9,7 @@ file = open("./7_open.py")
 print(list(file))
 file.close()
 
-file = open("./7_open.py", "rt", encoding="utf-8", errors="ignore")
+file = open("./07_open.py", "rt", encoding="utf-8", errors="ignore")
 # file descriptor number
 print(file.fileno())
 print(file.read(20))
