@@ -19,3 +19,11 @@ except Exception as e:
         except TypeError:
             print("That TypeException was catched, but raised again")
 
+
+try:
+    {}['foobar']
+except KeyError as e:
+    try:
+        raise RuntimeError('Ooops!') from e
+    except Exception as e1:
+        print(e1.__cause__, ' '.join(e.args))
